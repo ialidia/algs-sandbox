@@ -1,11 +1,13 @@
-import edu.princeton.cs.algs4.StdRandom;
-import edu.princeton.cs.algs4.StdStats;
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
-import edu.princeton.cs.algs4.QuickFindUF;
 
 /**
  * This class implements the percolation experiment.
  * Executed separately it starts the tests.
+ * Known bugs: after the system percolates it backwashes: the isFull() method
+ * returns true for sites that are connected to BOTTOM, but are not connected
+ * to the TOP. Can be solved with a second UF structure or by making openSites
+ * array take care of the FULL state as well (by turning openSites into
+ * a byte array).
  * @author Lidia Khmylko
  * created on 2017/05/08
  */
